@@ -31,7 +31,7 @@ print('身高 %.2f' % stu_height)
 # format格式
 print('学生姓名 {} , 学生年龄 {}'.format(stu_name, stu_age))
 # 格式简化
-print(f'学生的姓名: {stu_name} -- 学生的年龄: {stu_age:010d} -- 学生的身高: {stu_height:.2f} -- 学生的id: {stu_id:03d}')
+print(f'学生的姓名: {stu_name} -- 学生的年龄: {stu_age:010d} -- 学生的身高: {stu_height:.3f} -- 学生的id: {stu_id:03d}')
 
 # \n 换行 \t 空格
 print('hello\nhhn')
