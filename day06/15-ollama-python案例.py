@@ -14,7 +14,7 @@ while True:
         break
 
     # ② 调用 ollama.chat(model='xx',message=[{},{}]) 函数
-    result = ollama.chat(model='qwen2:0.5b', messages=[{
+    result = ollama.chat(model='deepseek-r1:7b', messages=[{
         'role': 'user',
         'content': prompt,
     }])
