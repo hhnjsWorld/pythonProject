@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title = '我是机器人'
+st.title('我是机器人')
 
 # 标题
 st.write('这是一个段落的标签')
