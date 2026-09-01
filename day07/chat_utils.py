@@ -25,7 +25,7 @@ def get_response(prompt):
     # 显式指定 host，避免 localhost 解析到 IPv6
     client = ollama.Client(host='http://127.0.0.1:11434')
     response = client.chat(
-        model='deepseek-r1:7b',
+        model='deepseek-r1:1.5b',
 
         # messages=[{'role': 'user', 'content': prompt}]
         # [{'role': 'user', 'content': prompt}] 换成 prompt 有我们说的话 Ai说的话 是一个消息列表

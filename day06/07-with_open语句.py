@@ -26,5 +26,4 @@ with (open('./data/a.txt', 'r', encoding='utf-8') as src_f1,
         if len(line_data) == 0:
             break
         print(line_data, end='')
-        G
         src_f2.write(line_data[-1::-1] + '\n')

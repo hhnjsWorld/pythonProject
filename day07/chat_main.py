@@ -34,7 +34,7 @@ for message in st.session_state.messages:
     # 4.1 streamlit 提供了 with语句，通过聊天消息容器，用来显示当前角色（user / assistant）的内容
     with st.chat_message(message['role']):
         # 该角色的消息容器内容显示 markdown / write
-        st.markdown(message['content'])
+        st.markdown(f'{message['content']}')
 
 # 5. 获取用户输入的内容
 prompt = st.chat_input("请输入你的问题...")
@@ -47,13 +47,17 @@ if prompt:
 
     # 6.2 在页面上显示 用户 输入的消息 / 指定渲染 (markdown(消息))
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(f"用户输入: {prompt}")
 
     with st.spinner('Ai正在思考中...'):
         # 思考的时间 -> 原因模型返回数据消耗的时间
         # st.session_state.messages[{ "我们说的话,内容..." },{ ai回复的... }] 完整的对话历史记录传过去
         # 而不是 自己说的内容 (否则他是无法推测能力 / 上下文能力...)
         response = get_response(st.session_state.messages)
+
+    # ↑ 渲染 我发的消息
+
+    # ↓ 渲染 Ai回复结果
 
     # 6.3 将模型返回的结果 添加到历史记录中, 渲染到页面上
     st.session_state.messages.append({
